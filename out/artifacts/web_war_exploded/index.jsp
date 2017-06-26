@@ -1,3 +1,7 @@
+<%@page import = "javax.servlet.http.HttpSession"%>
+<%--<%--%>
+  <%--HttpSession session = request.getSession(false);--%>
+<%--%>--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,49 +26,58 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form navbar-left form-inline">
+        <form class="navbar-form navbar-left form-inline" action="results.jsp">
           <div class="form-group">
             <input type="text" name="search" placeholder="Search.." class="input-md form-control" style="border-radius: 0px;width: 400px;">
           </div>
           <button type="submit" class="btn btn-md btn-danger" style="border-radius: 0px;">Search</button>
         </form>
-        <!-- trigger for loging modal -->
-        <li><a data-toggle="modal" data-target="#myModal">Your Account</a></li>
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
+        <%
+          session = request.getSession(false);
+          String user = (String) session.getAttribute("user_id");
+          if (user != null){
+              out.write("<li><a href=\"home.jsp\">"+"Welcome"+session.getAttribute("user_name").toString()+"</a></li>");
+          }
+          else{
+            out.write(
+                "<li><a data-toggle=\"modal\" data-target=\"#myModal\">Your Account</a></li>" +
+                "<div id=\"myModal\" class=\"modal fade\" role=\"dialog\">" +
+                "<div class=\"modal-dialog\">" +
+                "<div class=\"modal-content\">" +
+                "<div class=\"modal-header\">" +
+                "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>" +
+                "<h4 class=\"modal-title\">LOGIN</h4>" +
+                "</div>" +
+                "<div class=\"modal-body\">" +
 
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">LOGIN</h4>
-              </div>
-              <div class="modal-body">
-                <p>Dont have an account? <a href="registerForm.html">Create Account</a></p>
-                <form>
-                  <div class="form-group">
-                    <label for="email">Email address:</label>
-                    <input type="email" class="form-control" name="email" required autofocus>
-                  </div>
-                  <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" name="pwd" required>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox"> Remember me</label>
-                  </div>
-                  <button type="submit" class="btn btn-block btn-danger">Log In</button>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-            </div>
+                "<p>Dont have an account? <a href=\"registerForm.jsp\">Create Account</a></p>" +
+                "<form action=\"login.jsp\" method=\"post\">" +
+                "<div class=\"form-group\">" +
+                "<label for=\"email\">Email address:</label>" +
+                "<input type=\"email\" class=\"form-control\" name=\"email\" required autofocus>" +
+                "</div>" +
+                "<div class=\"form-group\">" +
+                "<label for=\"pwd\">Password:</label>" +
+                "<input type=\"password\" class=\"form-control\" name=\"pwd\" required>" +
+                "</div>" +
+                "<div class=\"checkbox\">" +
+                "<label><input type=\"checkbox\"> Remember me</label>" +
+                "</div>" +
+                "<button type=\"submit\" class=\"btn btn-block btn-danger\">Log In</button>" +
+                "</form>" +
+                "</div>" +
+                "<div class=\"modal-footer\">" +
+                "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>" +
+                "</div>" +
+                "</div>" +
 
-          </div>
-        </div>
-        <li><a href="#">Cart<span class="badge" style="background-color: firebrick;">0</span></a></li>
+                "</div>" +
+                "</div>"
+
+                );
+          }
+        %>
+                <li><a href="#">Cart<span class="badge" style="background-color: firebrick;">0</span></a></li>
       </ul>
     </div>
   </div>
@@ -153,9 +166,9 @@
         </div>
         <div id="menu1" class="tab-pane fade">
           <h3 class="text-center">Search for item</h3>
-          <form>
+          <form action="results.jsp">
             <input type="search" class="form-control" name="search" placeholder="Search for brand, specs (e.g Hp, 4gb RAM....)">
-            <button class="btn btn-block btn-success btn-lg"></button>
+            <button class="btn btn-block btn-success btn-lg">Search</button>
           </form>
         </div>
       </div>

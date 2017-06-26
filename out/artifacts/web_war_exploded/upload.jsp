@@ -31,7 +31,7 @@
 
             try {
                 Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/device_store_db", "root", "");
-                String sql = "INSERT INTO catalogue (device_type, brand_name, ram, storage_size, screen_size, cost, supplier)VALUES ('"+Device_Type+"', '"+Brand_Name+"', '"+ram+"', '"+Storage_Size+"', '"+Screen_Size+"', '"+Cost+"', '"+Supplier+"')";
+                String sql = "INSERT INTO catalogue (device_type, brand_name, ram, storage_size, screen_size, cost, supplier)VALUES ('"+Device_Type+"', '"+Brand_Name+"', '"+ram+"gb"+"', '"+Storage_Size+"gb"+"', '"+Screen_Size+"', '"+Cost+"', '"+Supplier+"')";
                 Statement st = (Statement) con.createStatement();
                 st.executeUpdate(sql);
 

@@ -1,3 +1,11 @@
+<%
+    session = request.getSession(false);
+    String user = (String) session.getAttribute("user_id");
+    if (user != null){
+        session.setAttribute("msg", "You Have to log out of current account");
+        response.sendRedirect("index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +17,7 @@
     <title>Register</title>
 </head>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: white; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -27,42 +35,52 @@
                     </div>
                     <button type="submit" class="btn btn-danger btn-md" style="border-radius: 0px;">Search</button>
                 </form>
-                <!-- trigger for loging modal -->
-                <li><a data-toggle="modal" data-target="#myModal">Your Account</a></li>
-                <!-- Modal -->
-                <div id="myModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
 
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">LOGIN</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>Dont have an account? <a href="registerForm.html">Create Account</a></p>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="email">Email address:</label>
-                                        <input type="email" class="form-control" name="email" required autofocus>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd">Password:</label>
-                                        <input type="password" class="form-control" name="pwd" required>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox"> Remember me</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-block btn-danger">Log In</button>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
+                <%
+                    session = request.getSession(false);
+                    String u = (String) session.getAttribute("user_id");
+                    if (u != null){
+                        out.write("<li><a href=\"home.jsp\">"+"Welcome"+session.getAttribute("user_name").toString()+"</a></li>");
+                    }
+                    else{
+                        out.write(
+                                "<li><a data-toggle=\"modal\" data-target=\"#myModal\">Your Account</a></li>" +
+                                        "<div id=\"myModal\" class=\"modal fade\" role=\"dialog\">" +
+                                        "<div class=\"modal-dialog\">" +
+                                        "<div class=\"modal-content\">" +
+                                        "<div class=\"modal-header\">" +
+                                        "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>" +
+                                        "<h4 class=\"modal-title\">LOGIN</h4>" +
+                                        "</div>" +
+                                        "<div class=\"modal-body\">" +
 
-                    </div>
-                </div>
+                                        "<p>Dont have an account? <a href=\"registerForm.jsp\">Create Account</a></p>" +
+                                        "<form action=\"login.jsp\" method=\"post\">" +
+                                        "<div class=\"form-group\">" +
+                                        "<label for=\"email\">Email address:</label>" +
+                                        "<input type=\"email\" class=\"form-control\" name=\"email\" required autofocus>" +
+                                        "</div>" +
+                                        "<div class=\"form-group\">" +
+                                        "<label for=\"pwd\">Password:</label>" +
+                                        "<input type=\"password\" class=\"form-control\" name=\"pwd\" required>" +
+                                        "</div>" +
+                                        "<div class=\"checkbox\">" +
+                                        "<label><input type=\"checkbox\"> Remember me</label>" +
+                                        "</div>" +
+                                        "<button type=\"submit\" class=\"btn btn-block btn-danger\">Log In</button>" +
+                                        "</form>" +
+                                        "</div>" +
+                                        "<div class=\"modal-footer\">" +
+                                        "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>" +
+                                        "</div>" +
+                                        "</div>" +
+
+                                        "</div>" +
+                                        "</div>"
+
+                        );
+                    }
+                %>
                 <li><a href="#">Cart<span class="badge">0</span></a></li>
             </ul>
         </div>
@@ -78,10 +96,10 @@
 <!-- Form to register a new user -->
 <div class="container" style="margin-top: 100px;background-color: white;padding: 40px;border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
     <h2>Register</h2>
-    <form class="center-block">
+    <form class="center-block" action="register.jsp" method="post">
         <div class="form-group">
             <label for="firstname">Firstname:</label>
-            <input type="text" class="form-control" name="firstname" style="width: 100%;" required>
+            <input type="text" class="form-control" name="firstname" style="width: 100%;" required autofocus>
         </div>
         <div class="form-group">
             <label for="lastname">Lastname:</label>
@@ -90,8 +108,8 @@
         <div class="form-group">
             <label for="sex">Sex:</label>
             <select class="form-control" name="sex" required>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
             </select>
         </div>
         <div class="form-group">
