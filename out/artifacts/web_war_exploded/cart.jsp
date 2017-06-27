@@ -1,3 +1,7 @@
+<%Class.forName("com.mysql.jdbc.Driver"); %>
+<%@ page language="java" import="java.sql.*" errorPage=""%>
+<%@page import = "java.sql.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-    <title>Cart</title>
+    <title>Sarperstein</title>
 </head>
 
 <body style="background-color: #F5F5F5;">
@@ -22,54 +26,141 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <form class="navbar-form navbar-left form-inline">
-                    <div class="form-group">
-                        <input type="text" name="search" placeholder="Search.." class="input-md form-control" style="border-radius: 0px;width: 400px;">
-                    </div>
-                    <button type="submit" class="btn btn-md btn-danger" style="border-radius: 0px;">Search</button>
-                </form>
-                <!-- trigger for loging modal -->
-                <li><a data-toggle="modal" data-target="#myModal">Your Account</a></li>
-                <!-- Modal -->
-                <div id="myModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
+                <li>
+                    <%--Trigger search modal--%>
+                    <button data-toggle="modal" data-target="#searchModal" class="btn btn-lg btn-danger" >Search</button>
+                    <!-- Modal -->
+                    <div id="searchModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
 
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">LOGIN</h4>
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">TELL US WHAT YOU WANT</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="results.jsp">
+                                        <div class="form-group">
+                                            <label for="device_type">Type Of Device</label>
+                                            <select class="form-control" name="device_type">
+                                                <option value="Laptop">--Laptop--</option>
+                                                <option value="Tablet">--Tablet</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="brand_name">Brand</label>
+                                            <select class="form-control" name="brand_name">
+                                                <%
+                                                    Connection conn;
+                                                    PreparedStatement stt;
+                                                    ResultSet res;
+
+                                                    try{
+                                                        String sql = "SELECT DISTINCT brand_name FROM catalogue";
+                                                        conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/device_store_db" , "root", "");
+                                                        stt = (PreparedStatement) conn.prepareStatement(sql);
+                                                        res = stt.executeQuery();
+                                                        while(res.next()){
+                                                            out.write("<option value="+res.getString("brand_name")+">--"+res.getString("brand_name")+"--</option>");
+                                                        }
+                                                        conn.close();
+                                                    }
+                                                    catch(Exception ex){
+                                                        out.write("<option value=\"\">--No Results--</option>");
+                                                    }
+                                                %>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ram">RAM size[GB]</label>
+                                            <input type="number" class="form-control" name="ram" min="1" max="64">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="storage_size">Storage size[GB]</label>
+                                            <input type="number" class="form-control" name="ram" min="1" max="2000">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="screen_size">Screen size</label>
+                                            <input type="number" class="form-control" name="screen_size" min="5" max="17">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cost">Price[N]</label>
+                                            <input type="number" class="form-control" name="cost">
+                                        </div>
+                                        <button type="submit" class="btn btn-block btn-danger">GO</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <p>Dont have an account? <a href="registerForm.html">Create Account</a></p>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="email">Email address:</label>
-                                        <input type="email" class="form-control" name="email" required autofocus>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd">Password:</label>
-                                        <input type="password" class="form-control" name="pwd" required>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox"> Remember me</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-block btn-danger">Log In</button>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
+
                         </div>
-
                     </div>
-                </div>
-                <li><a href="#">Cart<span class="badge" style="background-color: firebrick;">0</span></a></li>
+                </li>
+                <%
+                    session = request.getSession(false);
+                    String user = (String) session.getAttribute("user_id");
+                    if (user != null){
+                        out.write("<li><a href=\"home.jsp\">"+"Welcome  "+session.getAttribute("user_name").toString()+"</a></li>");
+                    }
+                    else{
+                        out.write(
+                                "<li><a data-toggle=\"modal\" data-target=\"#myModal\">Your Account</a></li>" +
+                                        "<div id=\"myModal\" class=\"modal fade\" role=\"dialog\">" +
+                                        "<div class=\"modal-dialog\">" +
+                                        "<div class=\"modal-content\">" +
+                                        "<div class=\"modal-header\">" +
+                                        "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>" +
+                                        "<h4 class=\"modal-title\">LOGIN</h4>" +
+                                        "</div>" +
+                                        "<div class=\"modal-body\">" +
+
+                                        "<p>Dont have an account? <a href=\"registerForm.jsp\">Create Account</a></p>" +
+                                        "<form action=\"login.jsp\" method=\"post\">" +
+                                        "<div class=\"form-group\">" +
+                                        "<label for=\"email\">Email address:</label>" +
+                                        "<input type=\"email\" class=\"form-control\" name=\"email\" required autofocus>" +
+                                        "</div>" +
+                                        "<div class=\"form-group\">" +
+                                        "<label for=\"pwd\">Password:</label>" +
+                                        "<input type=\"password\" class=\"form-control\" name=\"pwd\" required>" +
+                                        "</div>" +
+                                        "<div class=\"checkbox\">" +
+                                        "<label><input type=\"checkbox\"> Remember me</label>" +
+                                        "</div>" +
+                                        "<button type=\"submit\" class=\"btn btn-block btn-danger\">Log In</button>" +
+                                        "</form>" +
+                                        "</div>" +
+                                        "<div class=\"modal-footer\">" +
+                                        "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>" +
+                                        "</div>" +
+                                        "</div>" +
+
+                                        "</div>" +
+                                        "</div>"
+
+                        );
+                    }
+                %>
+                <li><a href="cart.jsp">Cart<span class="badge" style="background-color: firebrick;">
+        <% session = request.getSession(false);
+            String cart_num = (String) session.getAttribute("cart_num");
+            if (cart_num == null || cart_num == ""){
+                out.write("0");
+            }
+            else{
+                out.write(cart_num);
+            }%></span></a></li>
             </ul>
         </div>
     </div>
 </nav>
 <hr>
+
+<!-- help popover button -->
+<button class="btn btn-default btn-lg btn-info" data-toggle="popover" data-placement="top" data-content="Call us on 090088888" style="border-radius: 7px; position: fixed; bottom: 5px;right: 5px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); z-index: 2;">Help</button>
 
 <!-- help popover button -->
 <button class="btn btn-default btn-lg btn-info" data-toggle="popover" data-placement="top" data-content="Call us on 090088888" style="border-radius: 7px; position: fixed; bottom: 5px;right: 5px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); z-index: 2;">Help</button>
@@ -80,17 +171,64 @@
 
 <div class="container" style="margin-top: 100px;background-color: white;padding: 40px;border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
     <h1>Cart Items</h1>
-    <div class="row">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">
-                Panel content
-            </div>
-            <div class="panel-footer">Panel footer</div>
-        </div>
-    </div>
+    <%
+        session = request.getSession(false);
+        String cart = (String) session.getAttribute("cart");
+        String ids[] = cart.split(";");
+
+        Connection con;
+        PreparedStatement st;
+        ResultSet rs;
+
+        try {
+            for(String id: ids){
+                String sql = "SELECT * FROM catalogue WHERE id = '" + id + "' ";
+                con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/device_store_db", "root", "");
+                st = (PreparedStatement) con.prepareStatement(sql);
+                rs = st.executeQuery();
+                while (rs.next()) {
+                    String brand = rs.getString("brand_name");
+                    String type = rs.getString("device_type");
+                    String cost = rs.getString("cost");
+                    String ram = rs.getString("ram");
+                    String screen = rs.getString("screen_size");
+                    String supplier = rs.getString("supplier");
+                    String item_id = rs.getString("id");
+                    if (item_id == null || item_id == "" ) {
+                        out.write("<h1>No items Ordered</h1>");
+                    } else {
+                        out.write("<div class=\"row\">\n" +
+                                "        <div class=\"col-md-12\">\n" +
+                                "            <div class=\"panel panel-primary\">\n" +
+                                "                <div class=\"panel-heading\">\n" +
+                                "                    <h3 class=\"panel-title\">" + brand + " " + type + "</h3>\n" +
+                                "                </div>\n" +
+                                "                <div class=\"panel-body\">\n" +
+                                "                    <div class=\"row\">\n" +
+                                "                        <div class=\"col-md-6\">\n" +
+                                "                            <h3 class=\"text-center\">Price : N " + cost + "</h3>\n" +
+                                "                            <h3 class=\"text-center\">RAM : " + ram + "gb</h3>\n" +
+                                "                            <h3 class=\"text-center\">Srceen Size : " + screen + " \"</h3>\n" +
+                                "                        </div>\n" +
+                                "                        <div class=\"col-md-6\">\n" +
+                                "                            <img src=\"img/img1.JPG\" class=\"img-responsive img-thumbnail center-block\" style=\"width: 50%;\">\n" +
+                                "                        </div>\n" +
+                                "                    </div>\n" +
+                                "                </div>\n" +
+                                "                <div class=\"panel-footer\"><a href=\"remove-order.jsp?id=" + item_id + "\">Remove Order</a></div>\n" +
+                                "            </div>\n" +
+                                "        </div>\n" +
+                                "    </div>\n");
+
+                    }
+                }
+            }
+
+        }
+        catch (Exception ex){
+            out.write("An error occured:" + ex.getMessage());
+        }
+    %>
 </div>
 
 

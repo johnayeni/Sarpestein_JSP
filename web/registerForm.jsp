@@ -151,10 +151,10 @@
                         );
                     }
                 %>
-                <li><a href="#">Cart<span class="badge" style="background-color: firebrick;">
+                <li><a href="cart.jsp">Cart<span class="badge" style="background-color: firebrick;">
                     <% session = request.getSession(false);
                     String cart_num = (String) session.getAttribute("cart_num");
-                    if (cart_num == null){
+                    if (cart_num == null || cart_num == ""){
                         out.write("0");
                     }
                     else{
