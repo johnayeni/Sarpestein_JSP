@@ -3,6 +3,14 @@
 <%@page import = "java.sql.*"%>
 <%@page import = "javax.swing.*"%>
 <%@page import = "java.util.Date"%>
+<%
+    session = request.getSession(false);
+    String admin = (String) session.getAttribute("admin_id");
+    if (admin == null){
+        session.setAttribute("msg", "You Have to log in");
+        response.sendRedirect("admin-login-form.jsp");
+    }
+%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -14,6 +22,10 @@
 <%--<div id="mySidenav" class="sidenav">--%>
     <%--<a href="index.jsp" id="logout-side-nav">Logout</a>--%>
 <%--</div>--%>
+
+<!-- check out button -->
+<a href="logout.jsp" class="btn btn-default btn-lg btn-danger" style="border-radius: 0px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);z-index: 2;position: fixed;top: 15%;">LOG OUT</a>
+
 <div class="container">
     <a href="index.jsp"><h3>Admin Panel</h3></a>
     <ul class="nav nav-tabs">

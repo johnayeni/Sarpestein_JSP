@@ -25,7 +25,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Sarperstein</a>
+      <a class="navbar-brand" href="index.jsp">Sarperstein</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -172,15 +172,14 @@
     <div class="col-md-2" style="margin: 0px; padding: 0px;">
       <ul class="list-group">
         <li class="list-group-item">OUR PRODUCTS</li>
-        <li class="list-group-item">Dell</li>
-        <li class="list-group-item">Asus</li>
-        <li class="list-group-item">Asus</li>
-        <li class="list-group-item">Acer</li>
-        <li class="list-group-item">Tecno</li>
-        <li class="list-group-item">Sharp</li>
-        <li class="list-group-item">Sony</li>
-        <li class="list-group-item">Samsung</li>
-        <li class="list-group-item">Lenovo</li>
+        <li class="list-group-item">Dell  <span class="badge">0</span></li>
+        <li class="list-group-item">Asus  <span class="badge">0</span></li>
+        <li class="list-group-item">Acer  <span class="badge">0</span></li>
+        <li class="list-group-item">Tecno  <span class="badge">0</span></li>
+        <li class="list-group-item">Sharp  <span class="badge">0</span></li>
+        <li class="list-group-item">Sony  <span class="badge">0</span></li>
+        <li class="list-group-item">Samsung  <span class="badge">0</span></li>
+        <li class="list-group-item">Lenovo  <span class="badge">0</span></li>
       </ul>
     </div>
     <div class="col-md-6" style="margin: 0px; padding: 0px;">
@@ -209,7 +208,7 @@
       </div>
     </div>
     <div class="col-md-4" style="margin: 0px; padding: 0px;">
-      <img src="img/wallpaper3.JPG" class="img-responsive center-block" style="height: 400px;">
+      <img src="img/wallpaper4.JPG" class="img-responsive center-block" style="height: 400px;">
     </div>
   </div>
 </div>
