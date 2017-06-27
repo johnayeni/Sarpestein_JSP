@@ -1,3 +1,6 @@
+<%Class.forName("com.mysql.jdbc.Driver"); %>
+<%@ page language="java" import="java.sql.*" errorPage=""%>
+<%@page import = "java.sql.*"%>
 <%
     session = request.getSession(false);
     String user = (String) session.getAttribute("user_id");
@@ -29,18 +32,85 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <form class="navbar-form navbar-left form-inline">
-                    <div class="form-group">
-                        <input type="text" name="search" placeholder="Search.." class="input-md form-control" style="border-radius: 0px;width: 400px;">
+                <li>
+                    <%--Trigger search modal--%>
+                    <button data-toggle="modal" data-target="#searchModal" class="btn btn-lg btn-danger">Search</button>
+                    <!-- Modal -->
+                    <div id="searchModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">TELL US WHAT YOU WANT</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="results.jsp">
+                                        <div class="form-group">
+                                            <label for="device_type">Type Of Device</label>
+                                            <select class="form-control" name="device_type">
+                                                <option value="Laptop">--Laptop--</option>
+                                                <option value="Tablet">--Tablet</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="brand_name">Brand</label>
+                                            <select class="form-control" name="brand_name">
+                                                <%
+                                                    Connection conn;
+                                                    PreparedStatement stt;
+                                                    ResultSet res;
+
+                                                    try{
+                                                        String sql = "SELECT DISTINCT brand_name FROM catalogue";
+                                                        conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/device_store_db" , "root", "");
+                                                        stt = (PreparedStatement) conn.prepareStatement(sql);
+                                                        res = stt.executeQuery();
+                                                        while(res.next()){
+                                                            out.write("<option value="+res.getString("brand_name")+">--"+res.getString("brand_name")+"--</option>");
+                                                        }
+                                                        conn.close();
+                                                    }
+                                                    catch(Exception ex){
+                                                        out.write("<option value=\"\">--No Results--</option>");
+                                                    }
+                                                %>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ram">RAM size[GB]</label>
+                                            <input type="number" class="form-control" name="ram" min="1" max="64">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="storage_size">Storage size[GB]</label>
+                                            <input type="number" class="form-control" name="ram" min="1" max="2000">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="screen_size">Screen size[GB]</label>
+                                            <input type="number" class="form-control" name="screen_size" min="5" max="17">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cost">Price[N]</label>
+                                            <input type="number" class="form-control" name="cost">
+                                        </div>
+                                        <button type="submit" class="btn btn-block btn-danger">GO</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-danger btn-md" style="border-radius: 0px;">Search</button>
-                </form>
+                </li>
 
                 <%
                     session = request.getSession(false);
                     String u = (String) session.getAttribute("user_id");
                     if (u != null){
-                        out.write("<li><a href=\"home.jsp\">"+"Welcome"+session.getAttribute("user_name").toString()+"</a></li>");
+                        out.write("<li><a href=\"home.jsp\">"+"Welcome  "+session.getAttribute("user_name").toString()+"</a></li>");
                     }
                     else{
                         out.write(
@@ -81,7 +151,15 @@
                         );
                     }
                 %>
-                <li><a href="#">Cart<span class="badge">0</span></a></li>
+                <li><a href="#">Cart<span class="badge" style="background-color: firebrick;">
+                    <% session = request.getSession(false);
+                    String cart_num = (String) session.getAttribute("cart_num");
+                    if (cart_num == null){
+                        out.write("0");
+                    }
+                    else{
+                        out.write(cart_num);
+                    }%></span></a></li>
             </ul>
         </div>
     </div>

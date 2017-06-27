@@ -1,3 +1,6 @@
+<%Class.forName("com.mysql.jdbc.Driver"); %>
+<%@ page language="java" import="java.sql.*" errorPage=""%>
+<%@page import = "java.sql.*"%>
 <%@page import = "javax.servlet.http.HttpSession"%>
 <%--<%--%>
   <%--HttpSession session = request.getSession(false);--%>
@@ -26,17 +29,84 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form navbar-left form-inline" action="results.jsp">
-          <div class="form-group">
-            <input type="text" name="search" placeholder="Search.." class="input-md form-control" style="border-radius: 0px;width: 400px;">
+        <li>
+        <%--Trigger search modal--%>
+        <button data-toggle="modal" data-target="#searchModal" class="btn btn-lg btn-danger" >Search</button>
+        <!-- Modal -->
+        <div id="searchModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">TELL US WHAT YOU WANT</h4>
+              </div>
+              <div class="modal-body">
+                <form action="results.jsp">
+                  <div class="form-group">
+                    <label for="device_type">Type Of Device</label>
+                    <select class="form-control" name="device_type">
+                      <option value="Laptop">--Laptop--</option>
+                      <option value="Tablet">--Tablet</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="brand_name">Brand</label>
+                    <select class="form-control" name="brand_name">
+                      <%
+                        Connection conn;
+                        PreparedStatement stt;
+                        ResultSet res;
+
+                        try{
+                          String sql = "SELECT DISTINCT brand_name FROM catalogue";
+                          conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/device_store_db" , "root", "");
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          while(res.next()){
+                            out.write("<option value="+res.getString("brand_name")+">--"+res.getString("brand_name")+"--</option>");
+                          }
+                          conn.close();
+                        }
+                        catch(Exception ex){
+                          out.write("<option value=\"\">--No Results--</option>");
+                        }
+                      %>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="ram">RAM size[GB]</label>
+                    <input type="number" class="form-control" name="ram" min="1" max="64">
+                  </div>
+                  <div class="form-group">
+                    <label for="storage_size">Storage size[GB]</label>
+                    <input type="number" class="form-control" name="ram" min="1" max="2000">
+                  </div>
+                  <div class="form-group">
+                    <label for="screen_size">Screen size</label>
+                    <input type="number" class="form-control" name="screen_size" min="5" max="17">
+                  </div>
+                  <div class="form-group">
+                    <label for="cost">Price[N]</label>
+                    <input type="number" class="form-control" name="cost">
+                  </div>
+                  <button type="submit" class="btn btn-block btn-danger">GO</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
           </div>
-          <button type="submit" class="btn btn-md btn-danger" style="border-radius: 0px;">Search</button>
-        </form>
+        </div>
+      </li>
         <%
           session = request.getSession(false);
           String user = (String) session.getAttribute("user_id");
           if (user != null){
-              out.write("<li><a href=\"home.jsp\">"+"Welcome"+session.getAttribute("user_name").toString()+"</a></li>");
+              out.write("<li><a href=\"home.jsp\">"+"Welcome  "+session.getAttribute("user_name").toString()+"</a></li>");
           }
           else{
             out.write(
@@ -77,7 +147,15 @@
                 );
           }
         %>
-                <li><a href="#">Cart<span class="badge" style="background-color: firebrick;">0</span></a></li>
+        <li><a href="#">Cart<span class="badge" style="background-color: firebrick;">
+        <% session = request.getSession(false);
+          String cart_num = (String) session.getAttribute("cart_num");
+          if (cart_num == null){
+            out.write("0");
+          }
+          else{
+            out.write(cart_num);
+          }%></span></a></li>
       </ul>
     </div>
   </div>
@@ -93,9 +171,9 @@
   <div class="row">
     <div class="col-md-2" style="margin: 0px; padding: 0px;">
       <ul class="list-group">
+        <li class="list-group-item">OUR PRODUCTS</li>
         <li class="list-group-item">Dell</li>
         <li class="list-group-item">Asus</li>
-        <li class="list-group-item">Apple</li>
         <li class="list-group-item">Asus</li>
         <li class="list-group-item">Acer</li>
         <li class="list-group-item">Tecno</li>
@@ -165,17 +243,14 @@
           </div>
         </div>
         <div id="menu1" class="tab-pane fade">
-          <h3 class="text-center">Search for item</h3>
-          <form action="results.jsp">
-            <input type="search" class="form-control" name="search" placeholder="Search for brand, specs (e.g Hp, 4gb RAM....)">
-            <button class="btn btn-block btn-success btn-lg">Search</button>
-          </form>
-        </div>
+          <%--Trigger search modal--%>
+          <button data-toggle="modal" data-target="#searchModal" class="btn btn-block btn-lg btn-danger" style="border-radius: 0px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">Search</button>
       </div>
     </div>
-    <div class="col-md-3">
-      <img src="img/laptop.jpg" class="img-responsive center-block">
     </div>
+      <div class="col-md-3">
+        <img src="img/laptop.jpg" class="img-responsive center-block">
+      </div>
   </div>
 </div>
 

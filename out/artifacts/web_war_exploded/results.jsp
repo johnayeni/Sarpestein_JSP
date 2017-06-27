@@ -26,17 +26,84 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <form class="navbar-form navbar-left form-inline">
-                    <div class="form-group">
-                        <input type="text" name="search" placeholder="Search.." class="input-md form-control" style="border-radius: 0px;width: 400px;">
+                <li>
+                    <%--Trigger search modal--%>
+                    <button data-toggle="modal" data-target="#searchModal" class="btn btn-lg btn-danger">Search</button>
+                    <!-- Modal -->
+                    <div id="searchModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">TELL US WHAT YOU WANT</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="results.jsp">
+                                        <div class="form-group">
+                                            <label for="device_type">Type Of Device</label>
+                                            <select class="form-control" name="device_type">
+                                                <option value="Laptop">--Laptop--</option>
+                                                <option value="Tablet">--Tablet</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="brand_name">Brand</label>
+                                            <select class="form-control" name="brand_name">
+                                                <%
+                                                    Connection conn;
+                                                    PreparedStatement stt;
+                                                    ResultSet res;
+
+                                                    try{
+                                                        String sql = "SELECT DISTINCT brand_name FROM catalogue";
+                                                        conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/device_store_db" , "root", "");
+                                                        stt = (PreparedStatement) conn.prepareStatement(sql);
+                                                        res = stt.executeQuery();
+                                                        while(res.next()){
+                                                            out.write("<option value="+res.getString("brand_name")+">--"+res.getString("brand_name")+"--</option>");
+                                                        }
+                                                        conn.close();
+                                                    }
+                                                    catch(Exception ex){
+                                                        out.write("<option value=\"\">--No Results--</option>");
+                                                    }
+                                                %>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ram">RAM size[GB]</label>
+                                            <input type="number" class="form-control" name="ram" min="1" max="64">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="storage_size">Storage size[GB]</label>
+                                            <input type="number" class="form-control" name="ram" min="1" max="2000">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="screen_size">Screen size[GB]</label>
+                                            <input type="number" class="form-control" name="screen_size" min="5" max="17">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cost">Price[N]</label>
+                                            <input type="number" class="form-control" name="cost">
+                                        </div>
+                                        <button type="submit" class="btn btn-block btn-danger">GO</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-md btn-danger" style="border-radius: 0px;">Search</button>
-                </form>
+                </li>
                 <%
                     session = request.getSession(false);
                     String user = (String) session.getAttribute("user_id");
                     if (user != null){
-                        out.write("<li><a href=\"home.jsp\">"+"Welcome"+session.getAttribute("user_name").toString()+"</a></li>");
+                        out.write("<li><a href=\"home.jsp\">"+"Welcome  "+session.getAttribute("user_name").toString()+"</a></li>");
                     }
                     else{
                         out.write(
@@ -76,7 +143,16 @@
 
                         );
                     }
-                %>                <li><a href="#">Cart<span class="badge" style="background-color: firebrick;">0</span></a></li>
+                %>
+                <li><a href="#">Cart<span class="badge" style="background-color: firebrick;">
+                    <% session = request.getSession(false);
+                        String cart_num = (String) session.getAttribute("cart_num");
+                        if (cart_num == null){
+                            out.write("0");
+                        }
+                        else{
+                            out.write(cart_num);
+                        }%></span></a></li>
             </ul>
         </div>
     </div>
@@ -88,41 +164,54 @@
 
 
 <div class="container" style="margin-top: 100px;background-color: white;padding: 40px ;border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
-    <h1>Search Results For : <small><%= request.getParameter("search")%></small></h1>
+    <h1>Search Results For : <small>10</small></h1>
     <div class="row">
         <%
-            String search = request.getParameter("search");
-            String[] searchArray = search.split(" ");
+            String type = request.getParameter("device_type");
+            String brand = request.getParameter("brand_name");
+            String ram = request.getParameter("ram");
+            String storage = request.getParameter("storage_size");
+            String screen = request.getParameter("screen_size");
+            String cost = request.getParameter("cost");
             Connection con;
             PreparedStatement st;
-            ResultSet[] resultSets = new ResultSet[searchArray.length];
+            ResultSet resultSets;
 
             try{
-                for(int i = 0; i < searchArray.length; i++){
-                    String sql = "SELECT * FROM catalogue WHERE device_type = '"+ searchArray[i] +"' OR brand_name = '"+ searchArray[i] +"' OR ram = '"+ searchArray[i] +"' OR storage_size = '"+ search +"' OR screen_size = '"+ search +"' OR cost = '"+ search +"' OR supplier = '"+ search +"'";
-                    con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/device_store_db" , "root", "");
-                    st = (PreparedStatement) con.prepareStatement(sql);
-                    resultSets[i] = st.executeQuery();
-                }
-                for (int count = 0; count < resultSets.length; count++){
-                    while(resultSets[count].next()){
-                        String device_type = resultSets[count].getString("device_type");
-                        String brand_name = resultSets[count].getString("brand_name");
-                        String storage_size = resultSets[count].getString("storage_size");
-                        String ram = resultSets[count].getString("ram");
-                        String screen_size = resultSets[count].getString("screen_size");
-                        String cost = resultSets[count].getString("cost");
-                        String supplier = resultSets[count].getString("supplier");
-                        out.write("<div class=\"col-md-3 center-block well\" style=\"background-color: white;margin: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\">" +
-                                "<p>"+brand_name+"</p>" +
-                                "<p>"+device_type+"</p>" +
-                                "<p>"+ram + "  RAM</p>" +
-                                "<p>$ "+cost+"</p>" +
-                                "<img src=\"img/img1.JPG\" class=\"img-responsive\" style=\"width: 40%;\">" +
-                                "<button class=\"btn btn-block btn-success btn-lg\">Add To Cart</button>" +
-                                "</div>");
+
+                String sql = "SELECT * FROM catalogue WHERE device_type = '"+ type +"' AND brand_name = '"+ brand +"' AND ram >= '"+ ram +"' AND storage_size >= '"+ storage +"' AND screen_size >= '"+ screen +"' AND cost >= '"+ cost +"'";
+                con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/device_store_db" , "root", "");
+                st = (PreparedStatement) con.prepareStatement(sql);
+                resultSets = st.executeQuery();
+                int count = 0;
+                while(resultSets.next() && count< 10){
+                    String id = resultSets.getString("id");
+                    String device_type = resultSets.getString("device_type");
+                    String brand_name = resultSets.getString("brand_name");
+                    String storage_size = resultSets.getString("storage_size");
+                    String ram_size = resultSets.getString("ram");
+                    String screen_size = resultSets.getString("screen_size");
+                    String price = resultSets.getString("cost");
+                    String supplier = resultSets.getString("supplier");
+                    if (id.equals("")){
+                        out.write("No Items Found");
+                        break;
                     }
+                    out.write("<div class=\"col-md-3 center-block well\" style=\"background-color: white;margin: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\">" +
+                            "<h3 class= \"text-center\">"+brand_name+"</h3>" +
+                            "<h4 class= \"text-center\">"+device_type+"</h4>" +
+                            "<h4 class= \"text-center\">"+ram_size + "gb  RAM</h4>" +
+                            "<h4 class= \"text-center\">"+screen_size + "  \" </h4>" +
+                            "<h4 class= \"text-center\">$ "+price+"</h4>" +
+                            "<img src=\"img/img1.JPG\" class=\"img-responsive center-block\" style=\"width: 50%;\">" +
+                            "<div class=\"btn-group\" role=\"group\" aria-label=\"...\">" +
+                            "<a href=\"add-to-cart.jsp?id=" + id + "\" class=\"btn btn-block btn-success btn-lg\" value=\"'"+id+"'\" style=\"border-radius: 0px;\">Add To Cart</a>" +
+                            "<a href=\"view-details.jsp?id=" + id + "\" class=\"btn btn-block btn-danger btn-lg\" value=\"'"+id+"'\" style=\"border-radius: 0px;\">View Details</a>" +
+                            "</div>" +
+                            "</div>");
+                            count++;
                 }
+
             }
 
             catch(Exception ex){

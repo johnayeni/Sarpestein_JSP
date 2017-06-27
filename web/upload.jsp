@@ -17,21 +17,22 @@
     try{
         BufferedReader br = new BufferedReader(new FileReader("C:\\" +filename));
         String line;
+        line = br.readLine();
         while((line = br.readLine()) != null){
 
             String[] arr = line.split(";");
             System.out.println(Arrays.toString(arr));
             String Device_Type = arr[0];
             String Brand_Name = arr[1];
-            String ram = arr[2];
-            String Storage_Size = arr[3];
-            String Screen_Size = arr[4];
-            String Cost = arr[5];
+            int ram = Integer.parseInt(arr[2]);
+            int Storage_Size = Integer.parseInt(arr[3]);
+            double Screen_Size = Double.parseDouble(arr[4]);
+            double Cost = Double.parseDouble(arr[5]);
             String Supplier = arr[6];
 
             try {
                 Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/device_store_db", "root", "");
-                String sql = "INSERT INTO catalogue (device_type, brand_name, ram, storage_size, screen_size, cost, supplier)VALUES ('"+Device_Type+"', '"+Brand_Name+"', '"+ram+"gb"+"', '"+Storage_Size+"gb"+"', '"+Screen_Size+"', '"+Cost+"', '"+Supplier+"')";
+                String sql = "INSERT INTO catalogue (device_type, brand_name, ram, storage_size, screen_size, cost, supplier)VALUES ('"+Device_Type+"', '"+Brand_Name+"', '"+ram+"', '"+Storage_Size+"', '"+Screen_Size+"', '"+Cost+"', '"+Supplier+"')";
                 Statement st = (Statement) con.createStatement();
                 st.executeUpdate(sql);
 

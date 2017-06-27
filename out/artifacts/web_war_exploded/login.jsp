@@ -4,19 +4,19 @@
 <%
 //    HttpSession session = request.getSession();
     //checking if a user is already logged in
-    session = request.getSession(false);
-    String user = (String) session.getAttribute("user_id");
-    if (user != null){
-        session.setAttribute("msg", "You Have to log out of current account");
-        response.sendRedirect("index.jsp");
-    }
-    Connection con;
-    PreparedStatement st;
-    ResultSet rs;
+        session = request.getSession(false);
+        String user = (String) session.getAttribute("user_id");
+        if (user != null){
+            session.setAttribute("msg", "You Have to log out of current account");
+            response.sendRedirect("index.jsp");
+        }
+        Connection con;
+        PreparedStatement st;
+        ResultSet rs;
 
-    try{
+        try{
 
-        String email = request.getParameter("email").trim();
+            String email = request.getParameter("email").trim();
         String pwd = request.getParameter("pwd").trim();
 
         String sql = "SELECT * FROM users WHERE email = '"+ email+"' AND password = '"+ pwd+"'";
