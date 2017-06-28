@@ -1,15 +1,16 @@
 <%
     session = request.getSession(false);
+    String user = (String) session.getAttribute("user_id");
     String cart = (String) session.getAttribute("cart");
     if (cart == null || cart == ""){
         session.setAttribute("msg", "Empty Cart");
         response.sendRedirect("index.jsp");
     }
-    String user = (String) session.getAttribute("user_id");
-    if (user == null || user == ""){
+    else if (user == null || user == ""){
         session.setAttribute("msg", "You need to log in");
         response.sendRedirect("customer-login-form.jsp");
     }
+    else{
 %>
 <!DOCTYPE html>
 <html>
@@ -89,7 +90,8 @@
                                         <div class="clear"></div>
                                     </div>
                                 </legend>
-                                <input type="submit" value="SUBMIT">
+                                <button class="verify">Verify Card</button>
+                                <input type="submit" value="SUBMIT" class ="submit">
                             </form>
                             <div class="single-bottom">
                                 <ul>
@@ -140,7 +142,7 @@
                                             <div class="clear"></div>
                                         </div>
                                     </legend>
-                                    <input type="submit" value="SUBMIT">
+                                    <input type="submit" class="submit" value="SUBMIT" disabled>
                                 </form>
                                 <div class="single-bottom">
                                     <ul>
@@ -161,3 +163,6 @@
 </div>
 </body>
 </html>
+<%
+    }
+%>

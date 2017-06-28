@@ -32,7 +32,7 @@
             session.setAttribute("user_id", rs.getString("id"));
             session.setAttribute("user_name", rs.getString("firstname"));
         }
-        response.sendRedirect("home.jsp");
+        response.sendRedirect("cart.jsp");
     }
     catch (Exception ex){
         out.write(ex.getMessage());

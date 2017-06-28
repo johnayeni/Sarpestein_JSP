@@ -38,7 +38,7 @@
         }
 
         if (verify == true){
-            response.sendRedirect("home.jsp");
+            response.sendRedirect("cart.jsp");
         }
         else{
             session.setAttribute("msg", "Invalid login");

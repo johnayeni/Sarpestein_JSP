@@ -17,7 +17,7 @@
 </head>
 
 <body style="background-color: #F5F5F5;">
-<nav class="navbar navbar-inverse navbar-fixed-top" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); padding-top: 30px; padding-bottom: 30px;">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -59,6 +59,16 @@
                         PreparedStatement stt;
                         ResultSet res;
 
+                        int acer_count = 0;
+                        int dell_count= 0;
+                        int asus_count= 0;
+                        int tecno_count= 0;
+                        int sharp_count= 0;
+                        int sony_count= 0;
+                        int samsung_count= 0;
+                        int lenovo_count= 0;
+                        int laptop_count= 0;
+                        int tablet_count= 0;
                         try{
                           String sql = "SELECT DISTINCT brand_name FROM catalogue";
                           conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/device_store_db" , "root", "");
@@ -67,6 +77,65 @@
                           while(res.next()){
                             out.write("<option value="+res.getString("brand_name")+">--"+res.getString("brand_name")+"--</option>");
                           }
+                          sql = "SELECT brand_name  FROM catalogue WHERE brand_name = 'ACER'";
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          res.last();
+                          acer_count = res.getRow();
+
+                          sql = "SELECT  brand_name FROM catalogue WHERE brand_name = 'ASUS'";
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          res.last();
+                          asus_count = res.getRow();
+
+                          sql = "SELECT  brand_name FROM catalogue WHERE brand_name = 'DELL'";
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          res.last();
+                          dell_count = res.getRow();
+
+                          sql = "SELECT  brand_name FROM catalogue WHERE brand_name = 'TECHNO'";
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          res.last();
+                          tecno_count = res.getRow();
+
+                          sql = "SELECT  brand_name  FROM catalogue WHERE brand_name = 'SHARP'";
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          res.last();
+                          sharp_count = res.getRow();
+
+                          sql = "SELECT  brand_name FROM catalogue WHERE brand_name = 'SONY'";
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          res.last();
+                          sony_count = res.getRow();
+
+                          sql = "SELECT  brand_name FROM catalogue WHERE brand_name = 'SAMSUNG'";
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          res.last();
+                          samsung_count = res.getRow();
+
+                          sql = "SELECT  brand_name FROM catalogue WHERE brand_name = 'LENOVO'";
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          res.last();
+                          lenovo_count = res.getRow();
+
+                          sql = "SELECT  device_type FROM catalogue WHERE device_type = 'Laptop'";
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          res.last();
+                          laptop_count = res.getRow();
+
+                          sql = "SELECT device_type FROM catalogue WHERE device_type = 'Tablet'";
+                          stt = (PreparedStatement) conn.prepareStatement(sql);
+                          res = stt.executeQuery();
+                          res.last();
+                          tablet_count = res.getRow();
                           conn.close();
                         }
                         catch(Exception ex){
@@ -106,7 +175,8 @@
           session = request.getSession(false);
           String user = (String) session.getAttribute("user_id");
           if (user != null){
-              out.write("<li><a href=\"home.jsp\">"+"Welcome  "+session.getAttribute("user_name").toString()+"</a></li>");
+              out.write("<li><a href=\"home.jsp\">"+"Welcome  "+session.getAttribute("user_name").toString()+"</a></li>" +
+                      "<li><a href=\"logout.jsp\">LogOut</a></li>");
           }
           else{
             out.write(
@@ -172,14 +242,16 @@
     <div class="col-md-2" style="margin: 0px; padding: 0px;">
       <ul class="list-group">
         <li class="list-group-item">OUR PRODUCTS</li>
-        <li class="list-group-item">Dell  <span class="badge">0</span></li>
-        <li class="list-group-item">Asus  <span class="badge">0</span></li>
-        <li class="list-group-item">Acer  <span class="badge">0</span></li>
-        <li class="list-group-item">Tecno  <span class="badge">0</span></li>
-        <li class="list-group-item">Sharp  <span class="badge">0</span></li>
-        <li class="list-group-item">Sony  <span class="badge">0</span></li>
-        <li class="list-group-item">Samsung  <span class="badge">0</span></li>
-        <li class="list-group-item">Lenovo  <span class="badge">0</span></li>
+        <a href="results.jsp?device_type=Laptop&brand_name=&ram=&ram=&screen_size=&cost="><li class="list-group-item"><b>Laptops</b>  <span class="badge"><%=laptop_count%></span></li></a>
+        <a href="results.jsp?device_type=Tablet&brand_name=&ram=&ram=&screen_size=&cost="><li class="list-group-item"><b>Tablets</b>  <span class="badge"><%=tablet_count%></span></li></a>
+        <a href="results.jsp?device_type=&brand_name=DELL&ram=&ram=&screen_size=&cost="><li class="list-group-item">Dell  <span class="badge"><%=dell_count%></span></li></a>
+        <a href="results.jsp?device_type=&brand_name=ASUS&ram=&ram=&screen_size=&cost="><li class="list-group-item">Asus  <span class="badge"><%=asus_count%></span></li></a>
+        <a href="results.jsp?device_type=&brand_name=ACER&ram=&ram=&screen_size=&cost="><li class="list-group-item">Acer  <span class="badge"><%=acer_count%></span></li></a>
+        <a href="results.jsp?device_type=&brand_name=TECHNO&ram=&ram=&screen_size=&cost="><li class="list-group-item">Tecno  <span class="badge"><%=tecno_count%></span></li></a>
+        <a href="results.jsp?device_type=&brand_name=SHARP&ram=&ram=&screen_size=&cost="><li class="list-group-item">Sharp  <span class="badge"><%=sharp_count%></span></li></a>
+        <a href="results.jsp?device_type=&brand_name=SONY&ram=&ram=&screen_size=&cost="><li class="list-group-item">Sony  <span class="badge"><%=sony_count%></span></li></a>
+        <a href="results.jsp?device_type=&brand_name=SAMSUNG&ram=&ram=&screen_size=&cost="><li class="list-group-item">Samsung  <span class="badge"><%=samsung_count%></span></li></a>
+        <a href="results.jsp?device_type=&brand_name=LENOVO&ram=&ram=&screen_size=&cost="><li class="list-group-item">Lenovo  <span class="badge"><%=lenovo_count%></span></li></a>
       </ul>
     </div>
     <div class="col-md-6" style="margin: 0px; padding: 0px;">
@@ -189,6 +261,10 @@
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+          <li data-target="#myCarousel" data-slide-to="6"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -203,6 +279,15 @@
 
           <div class="item">
             <img src="img/img3.JPG" alt="New York" class="img-responsive center-block" style="width:100%;height: 400px;">
+          </div>
+          <div class="item">
+            <img src="img/img4.JPG" alt="New York" class="img-responsive center-block" style="width:100%;height: 400px;">
+          </div>
+          <div class="item">
+            <img src="img/img5.JPG" alt="New York" class="img-responsive center-block" style="width:100%;height: 400px;">
+          </div>
+          <div class="item">
+            <img src="img/img6.JPG" alt="New York" class="img-responsive center-block" style="width:100%;height: 400px;">
           </div>
         </div>
       </div>
@@ -253,11 +338,94 @@
   </div>
 </div>
 
+
+<%--Brand logo gallery--%>
+<div class="container" style="margin-top: 20px;background-color: white;padding: 40px;border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+  <div class="jumbotron" style="background-color: white;">
+    <h1 class="text-center">We have the best brands available</h1>
+  </div>
+
+
+  <div class="responsive">
+    <div class="gallery">
+      <a  href="results.jsp?device_type=&brand_name=SAMSUNG&ram=&ram=&screen_size=&cost=">
+        <img src="img/logos/samsungLogo.png" alt="samsung" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+
+  <div class="responsive">
+    <div class="gallery">
+      <a  href="results.jsp?device_type=&brand_name=DELL&ram=&ram=&screen_size=&cost=">
+        <img src="img/logos/dellLogo.png" alt="dell" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a  href="results.jsp?device_type=&brand_name=HP&ram=&ram=&screen_size=&cost=">
+        <img src="img/logos/hpLogo.png" alt="hp" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a  href="results.jsp?device_type=&brand_name=SHARP&ram=&ram=&screen_size=&cost=">
+        <img src="img/logos/sharpLogo.jpg" alt="sharp" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a  href="results.jsp?device_type=&brand_name=ASUS&ram=&ram=&screen_size=&cost=">
+        <img src="img/logos/asusLogo.png" alt="asus" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a  href="results.jsp?device_type=&brand_name=LENOVO&ram=&ram=&screen_size=&cost=">
+        <img src="img/logos/lenovoLogo.png" alt="lenovo" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a  href="results.jsp?device_type=&brand_name=SONY&ram=&ram=&screen_size=&cost=">
+        <img src="img/logos/sonyLogo.jpg" alt="sony" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a  href="results.jsp?device_type=&brand_name=TECNO&ram=&ram=&screen_size=&cost=">
+        <img src="img/logos/tecnoLogo.png" alt="tecno" width="600" height="400">
+      </a>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a  href="results.jsp?device_type=&brand_name=ACER&ram=&ram=&screen_size=&cost=">
+        <img src="img/logos/acerLogo.png" alt="acer" width="600" height="400" class="img-responsive">
+      </a>
+    </div>
+  </div>
+
+</div>
+
 <div class="container" style="margin-top: 20px;background-color: white;padding: 40px;border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
   <div class="row">
     <div class="col-md-12">
-      <h4>Why Shop on Sarpester</h4>
-      <p>At Sarpester, you are guaranteed an online shopping experience like never before. With several items to choose from, Sarpester offers a wide selection of items that spans across the most polular brand of devices. We have special deals all the time and we are always there for any special season like the Black Friday 2017 in November, Christmas, New Year and every special season there is. We bring the very best products and deals on Sarpester. Plus, our delivery is fast and our services are effective. Shop on Sarpester today and enjoy a safe online shopping experience.</p>
+      <h4>Why Shop on Sarperstein</h4>
+      <p>At Sarperstein, you are guaranteed an online shopping experience like never before. With several items to choose from, Sarperstein offers a wide selection of items that spans across the most polular brand of devices. We have special deals all the time and we are always there for any special season like the Black Friday 2017 in November, Christmas, New Year and every special season there is. We bring the very best products and deals on Sarperstein. Plus, our delivery is fast and our services are effective. Shop on Sarperstein today and enjoy a safe online shopping experience.</p>
     </div>
   </div>
 </div>
@@ -268,7 +436,7 @@
       <div class="col-md-4">
         <ul>
           <!-- trigger for the modal -->
-          <li data-toggle="modal" data-target="#contactModal">Contact Us</li>
+          <li data-toggle="modal" data-target="#contactModal"><h2>Contact Us</h2></li>
           <!-- Modal -->
           <div id="contactModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -300,7 +468,7 @@
 
             </div>
           </div>
-          <li>About Us</li>
+          <li><h2>About Us</h2></li>
         </ul>
       </div>
     </div>

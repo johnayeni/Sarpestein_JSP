@@ -204,6 +204,91 @@
         <button type="submit" class="btn btn-block btn-success">Submit</button>
     </form>
 </div>
+
+
+<%--Brand logo gallery--%>
+<div class="container" style="margin-top: 20px;background-color: white;padding: 40px;border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+    <div class="jumbotron" style="background-color: white;">
+        <h1 class="text-center">We have the best brands available</h1>
+    </div>
+
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=SAMSUNG&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/samsungLogo.png" alt="samsung" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=DELL&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/dellLogo.png" alt="dell" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=HP&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/hpLogo.png" alt="hp" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=SHARP&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/sharpLogo.jpg" alt="sharp" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=ASUS&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/asusLogo.png" alt="asus" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=LENOVO&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/lenovoLogo.png" alt="lenovo" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=SONY&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/sonyLogo.jpg" alt="sony" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=TECNO&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/tecnoLogo.png" alt="tecno" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=ACER&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/acerLogo.png" alt="acer" width="600" height="400" class="img-responsive">
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
 <footer class="text-center" style="margin-top: 10px;background-color: grey; color: white;padding: 100px 50px 20px 50px;bottom: 0px;" >
     <!-- <div class="container"> -->
     <div class="row">

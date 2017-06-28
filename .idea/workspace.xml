@@ -2,9 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4093276d-20c3-4b4e-a97e-646588e4acb2" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/IMG_1267.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/IMG_1268.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/IMG_1269.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/IMG_1271.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/IMG_1272.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/IMG_1273.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/IMG_1274.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/IMG_1276.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/IMG_1278.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/IMG_1279.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/img/wallpaper3.JPG" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/cart.jsp" afterPath="$PROJECT_DIR$/web/cart.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/cpanel.jsp" afterPath="$PROJECT_DIR$/web/cpanel.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/checkout.jsp" afterPath="$PROJECT_DIR$/web/checkout.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/main.css" afterPath="$PROJECT_DIR$/web/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/logout.jsp" afterPath="$PROJECT_DIR$/web/logout.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/order.jsp" afterPath="$PROJECT_DIR$/web/order.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/register.jsp" afterPath="$PROJECT_DIR$/web/register.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/registerForm.jsp" afterPath="$PROJECT_DIR$/web/registerForm.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/results.jsp" afterPath="$PROJECT_DIR$/web/results.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,13 +36,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="179" column="30" lean-forward="true" selection-start-line="179" selection-start-column="30" selection-end-line="179" selection-end-column="30" />
+            <state relative-caret-position="282">
+              <caret line="178" column="27" lean-forward="false" selection-start-line="178" selection-start-column="27" selection-end-line="178" selection-end-column="27" />
               <folding>
-                <marker date="1498585817084" expanded="true" signature="2670:2711" ph="SELECT DISTI... catalogue" />
+                <marker date="1498619577163" expanded="true" signature="3153:3194" ph="SELECT DISTI... catalogue" />
+                <marker date="1498619577163" expanded="true" signature="3698:3757" ph="SELECT DISTI... " />
+                <marker date="1498619577163" expanded="true" signature="4017:4076" ph="SELECT COUNT... " />
+                <marker date="1498619577163" expanded="true" signature="4336:4395" ph="SELECT COUNT... " />
+                <marker date="1498619577163" expanded="true" signature="4655:4716" ph="SELECT COUNT... " />
+                <marker date="1498619577163" expanded="true" signature="4977:5038" ph="SELECT COUNT... " />
+                <marker date="1498619577163" expanded="true" signature="5299:5358" ph="SELECT COUNT... " />
+                <marker date="1498619577163" expanded="true" signature="5618:5680" ph="SELECT COUNT... " />
+                <marker date="1498619577163" expanded="true" signature="5943:6004" ph="SELECT COUNT... " />
+                <marker date="1498619577163" expanded="true" signature="6266:6329" ph="SELECT COUNT... " />
+                <marker date="1498619577163" expanded="true" signature="6591:6653" ph="SELECT COUNT... " />
               </folding>
             </state>
           </provider>
@@ -33,42 +61,57 @@
       <file leaf-file-name="cart.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/cart.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="173" column="59" lean-forward="true" selection-start-line="173" selection-start-column="59" selection-end-line="173" selection-end-column="59" />
+            <state relative-caret-position="112">
+              <caret line="103" column="37" lean-forward="false" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
               <folding>
+                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#15700#15707#1#HTML" expanded="true" />
+                <element signature="e#19199#19206#1#HTML" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1498585365566" expanded="true" signature="3234:3275" ph="SELECT DISTI... catalogue" />
-                <marker date="1498585365566" expanded="true" signature="10840:10887" ph="SELECT * FRO... catalogue" />
+                <marker date="1498619577225" expanded="true" signature="3299:3340" ph="SELECT DISTI... catalogue" />
+                <marker date="1498619577225" expanded="true" signature="11113:11160" ph="SELECT * FRO... catalogue" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="remove-order.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/remove-order.jsp">
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="221">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checkout.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/checkout.jsp">
+      <file leaf-file-name="register.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/register.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="527">
+              <caret line="31" column="64" lean-forward="true" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1498618220785" expanded="true" signature="729:863" ph="INSERT INTO users... " />
+                <marker date="1498618220785" expanded="true" signature="1143:1220" ph="SELECT * FRO... users" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clear-cart.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/clear-cart.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="37" lean-forward="true" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,43 +119,9 @@
       <file leaf-file-name="order.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/order.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="39" lean-forward="false" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+            <state relative-caret-position="85">
+              <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customer-login-form.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/customer-login-form.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customer-login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/customer-login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-              <folding>
-                <marker date="1498584634452" expanded="true" signature="709:781" ph="SELECT * FRO... users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registerForm.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/registerForm.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-              <folding>
-                <marker date="1498574583319" expanded="true" signature="3438:3479" ph="SELECT DISTI... catalogue" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -120,24 +129,46 @@
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+            <state relative-caret-position="337">
+              <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
               <folding>
-                <marker date="1498567395716" expanded="true" signature="749:821" ph="SELECT * FRO... users" />
+                <marker date="1498618186520" expanded="true" signature="749:821" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cpanel.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/cpanel.jsp">
+      <file leaf-file-name="results.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/results.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+            <state relative-caret-position="180">
+              <caret line="179" column="12" lean-forward="false" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="12" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1498579541178" expanded="true" signature="2195:2214" ph="SELECT * FRO... users" />
-                <marker date="1498579541178" expanded="true" signature="3958:3981" ph="SELECT * FRO... catalogue" />
+                <marker date="1498621476118" expanded="true" signature="3276:3317" ph="SELECT DISTI... catalogue" />
+                <marker date="1498621476118" expanded="true" signature="10901:11104" ph="SELECT * FRO... catalogue" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkout.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/checkout.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="90" column="42" lean-forward="true" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registerForm.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/registerForm.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2118">
+              <caret line="274" column="94" lean-forward="true" selection-start-line="274" selection-start-column="94" selection-end-line="274" selection-end-column="94" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1498616626611" expanded="true" signature="3438:3479" ph="SELECT DISTI... catalogue" />
               </folding>
             </state>
           </provider>
@@ -153,6 +184,15 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>target=&quot;_blank&quot;</find>
+      <find>Sarpester</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Sarperstein</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -166,24 +206,26 @@
       <list>
         <option value="$PROJECT_DIR$/src/DatabaseClass.java" />
         <option value="$PROJECT_DIR$/web/home.jsp" />
-        <option value="$PROJECT_DIR$/web/register.jsp" />
-        <option value="$PROJECT_DIR$/web/logout.jsp" />
         <option value="$PROJECT_DIR$/web/upload.jsp" />
-        <option value="$PROJECT_DIR$/web/login.jsp" />
-        <option value="$PROJECT_DIR$/web/registerForm.jsp" />
-        <option value="$PROJECT_DIR$/web/add-to-cart.jsp" />
         <option value="$PROJECT_DIR$/web/remove-order.jsp" />
         <option value="$PROJECT_DIR$/web/admin-login.jsp" />
         <option value="$PROJECT_DIR$/web/cpanel.jsp" />
         <option value="$PROJECT_DIR$/web/admin-login-form.jsp" />
-        <option value="$PROJECT_DIR$/web/results.jsp" />
         <option value="$PROJECT_DIR$/web/checkout-1.jsp" />
         <option value="$PROJECT_DIR$/web/customer-login-form.jsp" />
         <option value="$PROJECT_DIR$/web/customer-login.jsp" />
+        <option value="$PROJECT_DIR$/web/add-to-cart.jsp" />
+        <option value="$PROJECT_DIR$/web/css/main.css" />
+        <option value="$PROJECT_DIR$/web/registerForm.jsp" />
+        <option value="$PROJECT_DIR$/web/clear-cart.jsp" />
+        <option value="$PROJECT_DIR$/web/logout.jsp" />
+        <option value="$PROJECT_DIR$/web/login.jsp" />
+        <option value="$PROJECT_DIR$/web/register.jsp" />
         <option value="$PROJECT_DIR$/web/order.jsp" />
         <option value="$PROJECT_DIR$/web/cart.jsp" />
-        <option value="$PROJECT_DIR$/web/checkout.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/checkout.jsp" />
+        <option value="$PROJECT_DIR$/web/results.jsp" />
       </list>
     </option>
   </component>
@@ -725,6 +767,7 @@
       <method />
     </configuration>
     <configuration default="false" name="Tomcat 7.0.56" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.56" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <deployment>
         <artifact name="web:war exploded">
           <settings>
@@ -779,15 +822,15 @@
       <workItem from="1498396173622" duration="19424000" />
       <workItem from="1498478667953" duration="30991000" />
       <workItem from="1498562796562" duration="611000" />
-      <workItem from="1498566958524" duration="16694000" />
+      <workItem from="1498566958524" duration="29024000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67720000" />
+    <option name="totallyTimeSpent" value="80050000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -810,7 +853,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2872671" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39906833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16837482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -823,6 +866,40 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39906833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16837482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -844,7 +921,17 @@
         <state relative-caret-position="1394">
           <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
           <folding>
-            <marker date="1498585817084" expanded="true" signature="2670:2711" ph="SELECT DISTI... catalogue" />
+            <marker date="1498619577163" expanded="true" signature="3153:3194" ph="SELECT DISTI... catalogue" />
+            <marker date="1498619577163" expanded="true" signature="3698:3757" ph="SELECT DISTI... " />
+            <marker date="1498619577163" expanded="true" signature="4017:4076" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4336:4395" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4655:4716" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4977:5038" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5299:5358" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5618:5680" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5943:6004" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="6266:6329" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="6591:6653" ph="SELECT COUNT... " />
           </folding>
         </state>
       </provider>
@@ -874,8 +961,8 @@
         <state relative-caret-position="153">
           <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
           <folding>
-            <marker date="1498492788887" expanded="true" signature="729:863" ph="INSERT INTO users... " />
-            <marker date="1498492788887" expanded="true" signature="1143:1220" ph="SELECT * FRO... users" />
+            <marker date="1498618220785" expanded="true" signature="729:863" ph="INSERT INTO users... " />
+            <marker date="1498618220785" expanded="true" signature="1143:1220" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -904,7 +991,8 @@
         <state relative-caret-position="1904">
           <caret line="112" column="72" lean-forward="false" selection-start-line="112" selection-start-column="72" selection-end-line="112" selection-end-column="72" />
           <folding>
-            <marker date="1498574583319" expanded="true" signature="3438:3479" ph="SELECT DISTI... catalogue" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1498616626611" expanded="true" signature="3438:3479" ph="SELECT DISTI... catalogue" />
           </folding>
         </state>
       </provider>
@@ -914,7 +1002,7 @@
         <state relative-caret-position="272">
           <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding>
-            <marker date="1498567395716" expanded="true" signature="749:821" ph="SELECT * FRO... users" />
+            <marker date="1498618186520" expanded="true" signature="749:821" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -932,8 +1020,8 @@
         <state relative-caret-position="3689">
           <caret line="217" column="66" lean-forward="true" selection-start-line="217" selection-start-column="66" selection-end-line="217" selection-end-column="66" />
           <folding>
-            <marker date="1498579748077" expanded="true" signature="3236:3277" ph="SELECT DISTI... catalogue" />
-            <marker date="1498579748077" expanded="true" signature="10770:10975" ph="SELECT * FRO... catalogue" />
+            <marker date="1498621476118" expanded="true" signature="3276:3317" ph="SELECT DISTI... catalogue" />
+            <marker date="1498621476118" expanded="true" signature="10901:11104" ph="SELECT * FRO... catalogue" />
           </folding>
         </state>
       </provider>
@@ -943,7 +1031,17 @@
         <state relative-caret-position="1394">
           <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
           <folding>
-            <marker date="1498585817084" expanded="true" signature="2670:2711" ph="SELECT DISTI... catalogue" />
+            <marker date="1498619577163" expanded="true" signature="3153:3194" ph="SELECT DISTI... catalogue" />
+            <marker date="1498619577163" expanded="true" signature="3698:3757" ph="SELECT DISTI... " />
+            <marker date="1498619577163" expanded="true" signature="4017:4076" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4336:4395" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4655:4716" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4977:5038" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5299:5358" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5618:5680" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5943:6004" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="6266:6329" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="6591:6653" ph="SELECT COUNT... " />
           </folding>
         </state>
       </provider>
@@ -973,8 +1071,8 @@
         <state relative-caret-position="153">
           <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
           <folding>
-            <marker date="1498492788887" expanded="true" signature="729:863" ph="INSERT INTO users... " />
-            <marker date="1498492788887" expanded="true" signature="1143:1220" ph="SELECT * FRO... users" />
+            <marker date="1498618220785" expanded="true" signature="729:863" ph="INSERT INTO users... " />
+            <marker date="1498618220785" expanded="true" signature="1143:1220" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -1003,7 +1101,8 @@
         <state relative-caret-position="1904">
           <caret line="112" column="72" lean-forward="false" selection-start-line="112" selection-start-column="72" selection-end-line="112" selection-end-column="72" />
           <folding>
-            <marker date="1498574583319" expanded="true" signature="3438:3479" ph="SELECT DISTI... catalogue" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1498616626611" expanded="true" signature="3438:3479" ph="SELECT DISTI... catalogue" />
           </folding>
         </state>
       </provider>
@@ -1013,7 +1112,7 @@
         <state relative-caret-position="272">
           <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding>
-            <marker date="1498567395716" expanded="true" signature="749:821" ph="SELECT * FRO... users" />
+            <marker date="1498618186520" expanded="true" signature="749:821" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
@@ -1031,8 +1130,8 @@
         <state relative-caret-position="3417">
           <caret line="201" column="78" lean-forward="false" selection-start-line="201" selection-start-column="78" selection-end-line="201" selection-end-column="78" />
           <folding>
-            <marker date="1498579748077" expanded="true" signature="3236:3277" ph="SELECT DISTI... catalogue" />
-            <marker date="1498579748077" expanded="true" signature="10770:10975" ph="SELECT * FRO... catalogue" />
+            <marker date="1498621476118" expanded="true" signature="3276:3317" ph="SELECT DISTI... catalogue" />
+            <marker date="1498621476118" expanded="true" signature="10901:11104" ph="SELECT * FRO... catalogue" />
           </folding>
         </state>
       </provider>
@@ -1050,7 +1149,17 @@
         <state relative-caret-position="323">
           <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
           <folding>
-            <marker date="1498585817084" expanded="true" signature="2670:2711" ph="SELECT DISTI... catalogue" />
+            <marker date="1498619577163" expanded="true" signature="3153:3194" ph="SELECT DISTI... catalogue" />
+            <marker date="1498619577163" expanded="true" signature="3698:3757" ph="SELECT DISTI... " />
+            <marker date="1498619577163" expanded="true" signature="4017:4076" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4336:4395" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4655:4716" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4977:5038" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5299:5358" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5618:5680" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5943:6004" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="6266:6329" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="6591:6653" ph="SELECT COUNT... " />
           </folding>
         </state>
       </provider>
@@ -1079,7 +1188,8 @@
         <state relative-caret-position="2686">
           <caret line="158" column="8" lean-forward="true" selection-start-line="158" selection-start-column="8" selection-end-line="158" selection-end-column="8" />
           <folding>
-            <marker date="1498574583319" expanded="true" signature="3438:3479" ph="SELECT DISTI... catalogue" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1498616626611" expanded="true" signature="3438:3479" ph="SELECT DISTI... catalogue" />
           </folding>
         </state>
       </provider>
@@ -1133,56 +1243,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding>
-            <marker date="1498492788887" expanded="true" signature="729:863" ph="INSERT INTO users... " />
-            <marker date="1498492788887" expanded="true" signature="1143:1220" ph="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/logout.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/admin-login-form.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/results.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-          <folding>
-            <marker date="1498579748077" expanded="true" signature="3236:3277" ph="SELECT DISTI... catalogue" />
-            <marker date="1498579748077" expanded="true" signature="10770:10975" ph="SELECT * FRO... catalogue" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/add-to-cart.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -1209,16 +1273,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/registerForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding>
-            <marker date="1498574583319" expanded="true" signature="3438:3479" ph="SELECT DISTI... catalogue" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/customer-login-form.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1227,77 +1281,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding>
-            <marker date="1498567395716" expanded="true" signature="749:821" ph="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/customer-login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
-          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding>
             <marker date="1498584634452" expanded="true" signature="709:781" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/order.jsp">
+    <entry file="file://$PROJECT_DIR$/web/remove-order.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="39" lean-forward="false" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/remove-order.jsp">
+    <entry file="file://$PROJECT_DIR$/web/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/add-to-cart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+          <folding>
+            <marker date="1498618186520" expanded="true" signature="749:821" ph="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/registerForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2118">
+          <caret line="274" column="94" lean-forward="true" selection-start-line="274" selection-start-column="94" selection-end-line="274" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1498616626611" expanded="true" signature="3438:3479" ph="SELECT DISTI... catalogue" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/order.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/clear-cart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="37" lean-forward="true" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="64" lean-forward="true" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+          <folding>
+            <marker date="1498618220785" expanded="true" signature="729:863" ph="INSERT INTO users... " />
+            <marker date="1498618220785" expanded="true" signature="1143:1220" ph="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/cart.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="173" column="59" lean-forward="true" selection-start-line="173" selection-start-column="59" selection-end-line="173" selection-end-column="59" />
+        <state relative-caret-position="112">
+          <caret line="103" column="37" lean-forward="false" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
           <folding>
+            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#15700#15707#1#HTML" expanded="true" />
+            <element signature="e#19199#19206#1#HTML" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1498585365566" expanded="true" signature="3234:3275" ph="SELECT DISTI... catalogue" />
-            <marker date="1498585365566" expanded="true" signature="10840:10887" ph="SELECT * FRO... catalogue" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/checkout.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1498619577225" expanded="true" signature="3299:3340" ph="SELECT DISTI... catalogue" />
+            <marker date="1498619577225" expanded="true" signature="11113:11160" ph="SELECT * FRO... catalogue" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="179" column="30" lean-forward="true" selection-start-line="179" selection-start-column="30" selection-end-line="179" selection-end-column="30" />
+        <state relative-caret-position="282">
+          <caret line="178" column="27" lean-forward="false" selection-start-line="178" selection-start-column="27" selection-end-line="178" selection-end-column="27" />
           <folding>
-            <marker date="1498585817084" expanded="true" signature="2670:2711" ph="SELECT DISTI... catalogue" />
+            <marker date="1498619577163" expanded="true" signature="3153:3194" ph="SELECT DISTI... catalogue" />
+            <marker date="1498619577163" expanded="true" signature="3698:3757" ph="SELECT DISTI... " />
+            <marker date="1498619577163" expanded="true" signature="4017:4076" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4336:4395" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4655:4716" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="4977:5038" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5299:5358" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5618:5680" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="5943:6004" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="6266:6329" ph="SELECT COUNT... " />
+            <marker date="1498619577163" expanded="true" signature="6591:6653" ph="SELECT COUNT... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/checkout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="90" column="42" lean-forward="true" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/results.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="179" column="12" lean-forward="false" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="12" />
+          <folding>
+            <marker date="1498621476118" expanded="true" signature="3276:3317" ph="SELECT DISTI... catalogue" />
+            <marker date="1498621476118" expanded="true" signature="10901:11104" ph="SELECT * FRO... catalogue" />
           </folding>
         </state>
       </provider>

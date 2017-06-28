@@ -1,7 +1,7 @@
 <%Class.forName("com.mysql.jdbc.Driver"); %>
 <%@ page language="java" import="java.sql.*" errorPage=""%>
 <%@page import = "java.sql.*"%>
-
+<% int Total_price = 0;%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
 </head>
 
 <body style="background-color: #F5F5F5;">
-<nav class="navbar navbar-inverse navbar-fixed-top" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);padding-top: 30px; padding-bottom: 30px;">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -103,7 +103,8 @@
                     session = request.getSession(false);
                     String user = (String) session.getAttribute("user_id");
                     if (user != null){
-                        out.write("<li><a href=\"home.jsp\">"+"Welcome  "+session.getAttribute("user_name").toString()+"</a></li>");
+                        out.write("<li><a href=\"home.jsp\">"+"Welcome  "+session.getAttribute("user_name").toString()+"</a></li>" +
+                                "<li><a href=\"logout.jsp\">LogOut</a></li>");
                     }
                     else{
                         out.write(
@@ -163,9 +164,13 @@
 <button class="btn btn-default btn-lg btn-info" data-toggle="popover" data-placement="top" data-content="Call us on 090088888" style="border-radius: 7px; position: fixed; bottom: 5px;right: 5px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); z-index: 2;">Help</button>
 
 
-<%--checks if the the users cart is emty before it shows the check out button--%>
-<%--not yet functional--%>
-"<a href="checkout.jsp" class="btn btn-default btn-lg btn-danger" style="border-radius: 0px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);z-index: 2;position: fixed;top: 15%;">CHECKOUT</a>\n"
+<%--check out button--%>
+<a href="checkout.jsp" class="btn btn-default btn-lg btn-primary" style="border-radius: 0px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);z-index: 2;position: fixed;top: 20%;">CHECKOUT</a>
+
+
+<%--Clear Cart Button--%>
+<a href="clear-cart.jsp" class="btn btn-default btn-lg btn-danger" style="border-radius: 0px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);z-index: 2;position: fixed;top: 30%;">CLEAR CART</a>
+
 
 <div class="container" style="margin-top: 100px;background-color: white;padding: 40px;border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
     <h1>Cart Items</h1>
@@ -195,6 +200,7 @@
                         String screen = rs.getString("screen_size");
                         String supplier = rs.getString("supplier");
                         String item_id = rs.getString("id");
+                        Total_price += Integer.parseInt(cost);
                         if (item_id == null || item_id == "" ) {
                             out.write("<h1>No items Ordered</h1>");
                         } else {
@@ -231,16 +237,102 @@
             }
         }
 
+
     %>
 </div>
 
+<%--Total price displayed--%>
+<button  class="btn btn-default btn-lg btn-warning" style="border-radius: 0px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);z-index: 2;position: fixed;top: 40%;">Total Price: N<%=Total_price%></button>
+
+
+<%--Brand logo gallery--%>
+<div class="container" style="margin-top: 20px;background-color: white;padding: 40px;border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
+    <div class="jumbotron" style="background-color: white;">
+        <h1 class="text-center">We have the best brands available</h1>
+    </div>
+
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=SAMSUNG&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/samsungLogo.png" alt="samsung" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=DELL&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/dellLogo.png" alt="dell" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=HP&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/hpLogo.png" alt="hp" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=SHARP&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/sharpLogo.jpg" alt="sharp" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=ASUS&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/asusLogo.png" alt="asus" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=LENOVO&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/lenovoLogo.png" alt="lenovo" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=SONY&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/sonyLogo.jpg" alt="sony" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=TECNO&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/tecnoLogo.png" alt="tecno" width="600" height="400">
+            </a>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a  href="results.jsp?device_type=&brand_name=ACER&ram=&ram=&screen_size=&cost=">
+                <img src="img/logos/acerLogo.png" alt="acer" width="600" height="400" class="img-responsive">
+            </a>
+        </div>
+    </div>
+
+</div>
 
 
 <div class="container" style="margin-top: 20px;background-color: white;padding: 40px;border-radius: 10px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);">
     <div class="row">
         <div class="col-md-12">
-            <h4>Why Shop on Sarpester</h4>
-            <p>At Sarpester, you are guaranteed an online shopping experience like never before. With several items to choose from, Sarpester offers a wide selection of items that spans across the most polular brand of devices. We have special deals all the time and we are always there for any special season like the Black Friday 2017 in November, Christmas, New Year and every special season there is. We bring the very best products and deals on Sarpester. Plus, our delivery is fast and our services are effective. Shop on Sarpester today and enjoy a safe online shopping experience.</p>
+            <h4>Why Shop on Sarperstein</h4>
+            <p>At Sarperstein, you are guaranteed an online shopping experience like never before. With several items to choose from, Sarperstein offers a wide selection of items that spans across the most polular brand of devices. We have special deals all the time and we are always there for any special season like the Black Friday 2017 in November, Christmas, New Year and every special season there is. We bring the very best products and deals on Sarperstein. Plus, our delivery is fast and our services are effective. Shop on Sarperstein today and enjoy a safe online shopping experience.</p>
         </div>
     </div>
 </div>

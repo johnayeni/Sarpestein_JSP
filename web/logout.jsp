@@ -7,7 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    session.invalidate();
+    session.removeAttribute("user_id");
+    session.removeAttribute("admin_name");
+    session.removeAttribute("user_name");
+    session.removeAttribute("admin_name");
     session = request.getSession();
     response.sendRedirect("index.jsp");
 %>
