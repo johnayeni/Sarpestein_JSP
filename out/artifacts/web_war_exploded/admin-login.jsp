@@ -2,7 +2,7 @@
 <%@ page language="java" import="java.sql.*" errorPage=""%>
 <%@page import = "java.sql.*"%>
 <%
-    //    HttpSession session = request.getSession();
+
     //checking if a user is already logged in
     session = request.getSession(false);
     String user = (String) session.getAttribute("admin_id");

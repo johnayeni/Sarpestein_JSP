@@ -146,53 +146,53 @@ try{
     </div>
         <div id="menu3" class="tab-pane fade">
             <h3>Orders</h3>
-            <%--<div class="table-responsive">--%>
-                <%--<table class="table">--%>
-                    <%--<thead>--%>
-                    <%--<tr>--%>
-                        <%--<th>id</th>--%>
-                        <%--<th>user_id</th>--%>
-                        <%--<th>Order Placed</th>--%>
-                        <%--<th>No of Items</th>--%>
-                        <%--<th>Delivery Address</th>--%>
-                        <%--<th>Price</th>--%>
-                        <%--<th>Date</th>--%>
-                    <%--</tr>--%>
-                    <%--</thead>--%>
-                    <%--<tbody>--%>
-                    <%--<%--%>
-                        <%--try{--%>
-                            <%--Connection con = DriverManager.getConnection("jdbc:mysql://localhost/burger", "root", "");--%>
-                            <%--Statement st = (Statement) con.createStatement();--%>
-                            <%--String select = "SELECT * FROM orders";--%>
-                            <%--ResultSet rs = st.executeQuery(select);--%>
-                            <%--while(rs.next())--%>
-                            <%--{--%>
-                                <%--String id = rs.getString("id");--%>
-                                <%--String user_id = rs.getString("user_id");--%>
-                                <%--String order = rs.getString("orderPlaced");--%>
-                                <%--String count = rs.getString("itemCount");--%>
-                                <%--String address = rs.getString("deliveryAddress");--%>
-                                <%--String price = rs.getString("price");--%>
-                                <%--out.write("<tr>");--%>
-                                <%--out.write("<td>"+ id +"</td>");--%>
-                                <%--out.write("<td>"+ user_id +"</td>");--%>
-                                <%--out.write("<td>"+ order +"</td>");--%>
-                                <%--out.write("<td>"+ count +"</td>");--%>
-                                <%--out.write("<td>"+ address +"</td>");--%>
-                                <%--out.write("<td>"+ price +"</td>");--%>
-                                <%--Date date = new Date();--%>
-                            <%--}--%>
-                            <%--con.close();--%>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>user_id</th>
+                        <th>User Name</th>
+                        <th>item_id</th>
+                        <th>Delivery Address</th>
+                        <th>Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%
+                        try{
+                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/burger", "root", "");
+                            Statement st = (Statement) con.createStatement();
+                            String select = "SELECT * FROM orders";
+                            ResultSet rs = st.executeQuery(select);
+                            while(rs.next())
+                            {
+                                String id = rs.getString("id");
+                                String user_id = rs.getString("user_id");
+                                String name = rs.getString("user_name");
+                                String item_id = rs.getString("item_id");
+                                String address = rs.getString("delivery_address");
+                                out.write("<tr>");
+                                out.write("<td>"+ id +"</td>");
+                                out.write("<td>"+ user_id +"</td>");
+                                out.write("<td>"+ name +"</td>");
+                                out.write("<td>"+ item_id +"</td>");
+                                out.write("<td>"+ address +"</td>");
+                                Date date = new Date();
+                                date = rs.getDate("reg_date");
+                                out.write("<td>"+ date +"</td>");
+                                out.write("</tr>");
+                            }
+                            con.close();
 
-                        <%--}--%>
-                        <%--catch(Exception ex){--%>
-                            <%--out.write("Error 404");--%>
-                        <%--}--%>
-                    <%--%>--%>
-                    <%--</tbody>--%>
-                <%--</table>--%>
-            <%--</div>--%>
+                        }
+                        catch(Exception ex){
+                            out.write("Error 404");
+                        }
+                    %>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div id="menu4" class="tab-pane fade">
             <h3>Add a catalogue file</h3>

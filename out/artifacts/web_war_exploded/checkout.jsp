@@ -2,11 +2,11 @@
     session = request.getSession(false);
     String user = (String) session.getAttribute("user_id");
     String cart = (String) session.getAttribute("cart");
-    if (cart == null || cart == ""){
+    if (cart == null){
         session.setAttribute("msg", "Empty Cart");
         response.sendRedirect("index.jsp");
     }
-    else if (user == null || user == ""){
+    else if (user == null){
         session.setAttribute("msg", "You need to log in");
         response.sendRedirect("customer-login-form.jsp");
     }
@@ -55,42 +55,41 @@
                     <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
                         <div class="payment-info">
                             <h3>Delivery Info</h3>
-                            <form action="order.jsp" method="POST">
+                            <form id="credit-card-form">
                                 <div class="tab-for">
                                     <legend>
                                         <h5>DELIVERY ADDRESS</h5>
-                                        <textarea rows="5"  name="delivery address" required></textarea>
+                                        <textarea rows="5"  name="address" required style="color: black !important;"></textarea>
                                     </legend>
                                 </div>
                                 <legend>
                                     <h3 class="pay-title">Credit Card Info</h3>
                                     <div class="tab-for">
                                         <h5>NAME ON CARD</h5>
-                                        <input type="text" value="" required>
+                                        <input type="text" value="" style="color: black !important;" required>
                                         <h5>CARD NUMBER</h5>
-                                        <input class="pay-logo" type="text"  placeholder="0000-0000-000"  required minlength="11" maxlength="11">
+                                        <input class="pay-logo" type="number"  placeholder="0000-0000-000" style="color: black !important;" required minlength="11" maxlength="11">
                                     </div>
                                     <div class="transaction">
                                         <div class="tab-form-left user-form">
                                             <h5>EXPIRATION</h5>
                                             <ul>
                                                 <li>
-                                                    <input type="number" class="text_box" type="text" placeholder="6" min="1" max="31" required />
+                                                    <input type="number" class="text_box" type="text" placeholder="6" style="color: black !important;" min="1" max="31" required />
                                                 </li>
                                                 <li>
-                                                    <input type="number" class="text_box" type="text" placeholder="2017" min="2017" required />
+                                                    <input type="number" class="text_box" type="text" style="color: black !important;" placeholder="2017" min="2017" required />
                                                 </li>
 
                                             </ul>
                                         </div>
                                         <div class="tab-form-right user-form-rt">
                                             <h5>CVV NUMBER</h5>
-                                            <input type="text" placeholder="xxx" required minlength="3" maxlength="3">
+                                            <input type="number" placeholder="xxx" required minlength="3" maxlength="3" style="color: black !important;">
                                         </div>
                                         <div class="clear"></div>
                                     </div>
                                 </legend>
-                                <button class="verify">Verify Card</button>
                                 <input type="submit" value="SUBMIT" class ="submit">
                             </form>
                             <div class="single-bottom">
@@ -107,37 +106,37 @@
                         <div class="payment-info">
                             <div class="payment-info">
                                 <h3>Delivery Info</h3>
-                                <form action="order.jsp" method="POST">
+                                <form id="derbit-card-form">
                                     <div class="tab-for">
                                         <legend>
                                             <h5>DELIVERY ADDRESS</h5>
-                                            <textarea rows="5"  name="delivery address" required></textarea>
+                                            <textarea rows="5"  name="address" style="color: black !important;" required></textarea>
                                         </legend>
                                     </div>
                                     <legend>
                                         <h3 class="pay-title">Debit Card Info</h3>
                                         <div class="tab-for">
                                             <h5>NAME ON CARD</h5>
-                                            <input type="text" value="" required>
+                                            <input type="text" value="" style="color: black !important;" required>
                                             <h5>CARD NUMBER</h5>
-                                            <input class="pay-logo" type="text" placeholder="0000-0000-000" required minlength="11" maxlength="11">
+                                            <input class="pay-logo" type="number" placeholder="0000-0000-000" style="color: black !important;" required minlength="11" maxlength="11">
                                         </div>
                                         <div class="transaction">
                                             <div class="tab-form-left user-form">
                                                 <h5>EXPIRATION</h5>
                                                 <ul>
                                                     <li>
-                                                        <input type="number" class="text_box" type="text" placeholder="6" min="1" max="31" />
+                                                        <input type="number" class="text_box" type="text" style="color: black !important;" placeholder="6" min="1" max="31" required/>
                                                     </li>
                                                     <li>
-                                                        <input type="number" class="text_box" type="text" placeholder="2017" min="2017"/>
+                                                        <input type="number" class="text_box" type="text" style="color: black !important;" placeholder="2017" min="2017" required/>
                                                     </li>
 
                                                 </ul>
                                             </div>
                                             <div class="tab-form-right user-form-rt">
                                                 <h5>CVV NUMBER</h5>
-                                                <input type="text" placeholder="xxx" minlength="3" maxlength="3">
+                                                <input type="number" placeholder="xxx" minlength="3" maxlength="3" style="color: black !important;" required>
                                             </div>
                                             <div class="clear"></div>
                                         </div>
@@ -166,3 +165,21 @@
 <%
     }
 %>
+<script>
+    $(document).ready(function () {
+       $("#credit-card-form").submit(function () {
+          alert("Transaction Successful");
+          var submit = $(this).find(':submit');
+          submit.attr('disabled', 'disabled');
+          $.post("order.jsp");
+           window.location.reload();
+       });
+        $("#derbit-card-form").submit(function () {
+            alert("Transaction Successful");
+            var submit = $(this).find(':submit');
+            submit.attr('disabled', 'disabled');
+            $.post("order.jsp");
+            window.location.reload();
+        });
+    });
+</script>

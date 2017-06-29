@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     session.removeAttribute("user_id");
-    session.removeAttribute("admin_name");
+    session.removeAttribute("admin_id");
     session.removeAttribute("user_name");
     session.removeAttribute("admin_name");
     session = request.getSession();

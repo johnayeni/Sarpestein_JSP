@@ -186,7 +186,7 @@ li.resp-tab-item.resp-tab-active span label {
     font-weight: 600;
     border: 1px solid #e7ebee;
     outline: none;
-    color: #ccc;
+    color: black;
     border-radius: 5px;
     margin-bottom: 20px;
     transition:0.5s all;
@@ -202,7 +202,7 @@ li.resp-tab-item.resp-tab-active span label {
     font-weight: 600;
     border: 1px solid #e7ebee;
     outline: none;
-    color: #ccc;
+    color: black;
     border-radius: 5px;
     margin-bottom: 20px;
     transition:0.5s all;
@@ -279,7 +279,7 @@ input.text_box {
     font-weight: 600;
     border: 1px solid #e7ebee;
     outline: none;
-    color: #ccc;
+    color: black;
     border-radius: 5px;
     margin-bottom: 30px;
     transition:0.5s all;
