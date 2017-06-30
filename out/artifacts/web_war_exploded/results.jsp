@@ -1,6 +1,7 @@
-<%@page import = "db.Catalogue"%>
+<%--<%@page import = "db.Catalogue"%>--%>
 <%@page import = "db.DBHelper"%>
 <%@page import = "db.HEOMData"%>
+<%@ page import="db.Catalogue" %>
 
 <%@include file="WEB-INF/header.jsp" %>
 <!-- help popover button -->
